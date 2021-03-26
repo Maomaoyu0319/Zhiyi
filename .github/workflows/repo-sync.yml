@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
+
       - name: sync-Zhiyi
         uses: repo-sync/github-sync@v2
         if: env.PAT
@@ -29,6 +30,7 @@ jobs:
           source_branch: "master"
           destination_branch: "Zhiyi"
           github_token: ${{ secrets.PAT }}
+
       - name: sync-Feizao
         uses: repo-sync/github-sync@v2
         if: env.PAT
@@ -36,4 +38,23 @@ jobs:
           source_repo: "https://github.com/age174/-.git"
           source_branch: "main"
           destination_branch: "Feizao"
+          github_token: ${{ secrets.PAT }}
+
+      - name: sync-Cenbomin
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/CenBoMin/GithubSync.git"
+          source_branch: "main"
+          destination_branch: "Cenbomin"
+          github_token: ${{ secrets.PAT }}
+
+
+      - name: sync-Caixukun
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/caixukun112/js.git"
+          source_branch: "master"
+          destination_branch: "Caixukun"
           github_token: ${{ secrets.PAT }}
